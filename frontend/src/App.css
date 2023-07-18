@@ -22,6 +22,14 @@ code {
     monospace;
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
 /*NAVBAR*/
 #headerNavbar {
   display: flex;
@@ -89,6 +97,10 @@ code {
   border: 2px solid black;
 }
 
+#tooltipGaming {
+  display: none;
+}
+
 /*LOGIN && REGISTER*/
 .form-login {
   border-top: 1px solid #e86cbe;
@@ -104,6 +116,110 @@ code {
   margin-top: 1.5rem;
   border-radius: 2rem;
   cursor: pointer;
+}
+
+/*HOME*/
+.homeContain h1 {
+  margin-bottom: 1rem;
+}
+
+.homeContain h3 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+.homeContain p {
+  text-align: justify;
+  margin: 0rem 1.5rem 2rem 1.5rem;
+  position: relative;
+}
+
+.homediv {
+  background-color: rgba(255, 255, 255, 0.486);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.homedivChat {
+  position: absolute;
+  width: 4rem;
+  transform: translateY(-110%);
+}
+
+.homedivGG {
+  position: absolute;
+  width: 5.4rem;
+  transform: translateY(-5%);
+  right: -1rem;
+}
+
+/*Carousel*/
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  border: 5px solid rgba(0, 0, 0, 0.74);
+  border-radius: 1.4rem;
+}
+
+.carouselContainer .overlay {
+  width: 80%;
+  position: absolute;
+  top: 85%;
+  transform: translateY(-50%);
+  left: 10%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(254, 254, 254, 0.545);
+}
+
+.carouselContainer img {
+  height: 13rem;
+  border-radius: 1rem;
+}
+
+/*FOOTER*/
+footer {
+  background-color: #db88ba;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 10rem;
+  padding-bottom: 1rem;
+}
+
+footer span {
+  text-align: center;
+}
+
+.speak {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 3rem 1rem 3rem;
+}
+
+.footerSpan {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.speak img {
+  width: 19rem;
+}
+
+.footerSommaire {
+  text-align: justify;
+}
+
+.footerSommaire li {
+  line-height: 1.5rem;
+  text-decoration: underline 1px white;
 }
 
 /*RESPONSIVE*/
@@ -122,16 +238,98 @@ code {
 
   .linkNavbar {
     display: block;
+    padding: 0.2rem;
+    border-radius: 10rem;
   }
 
   .linkNavbar:hover {
+    background-color: rgba(0, 0, 0, 0.06);
     transition: 100ms;
     color: white;
-    border-bottom: 2px solid white;
   }
 
   #tooltipNavbar {
     display: none;
+  }
+
+  #tooltipGaming {
+    display: block;
+  }
+
+  .tooltip-gaming-title:hover {
+    transition: 100ms;
+    color: white;
+  }
+
+  /*Carousel*/
+  .carouselContainer {
+    width: 60rem;
+  }
+
+  .carouselContainer img {
+    height: 30rem;
+  }
+
+  .carouselContainer .overlay {
+    top: 87%;
+    font-size: 1.5rem;
+  }
+
+  /*HOME*/
+
+  .homeContain {
+    padding-bottom: 2rem;
+  }
+
+  .homeContain h1 {
+    font-size: 2rem;
+  }
+
+  .homeContain h3 {
+    margin: 2rem;
+    font-size: 1.7rem;
+  }
+
+  .homeContain p {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin: 0rem 5rem 2rem 5rem;
+  }
+
+  .homediv {
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 0.5rem;
+    margin: 1rem 20rem 0rem 20rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .homedivChat {
+    position: absolute;
+    width: 5rem;
+    transform: translateY(-110%);
+  }
+
+  .homedivGG {
+    position: absolute;
+    width: 5.4rem;
+    transform: translateY(-5%);
+    right: -5rem;
+  }
+
+  /*FOOTER*/
+  .footerContain {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footerSommaire {
+    width: 20rem;
+  }
+
+  .footerSommaire ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
