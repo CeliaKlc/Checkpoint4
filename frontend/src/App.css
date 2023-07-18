@@ -14,6 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e9dae3;
 }
 
 code {
@@ -44,35 +45,63 @@ code {
   display: none;
 }
 
-/*HOME*/
-
-#sectionHome h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(./assets/pictures/Colchis.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-size: 2rem;
-  text-align: center;
-  color: rgb(236, 208, 114);
-  text-shadow: 1px 1px rgb(0, 0, 0);
-  height: 15rem;
-}
-
-.divHome {
+/*REGISTER*/
+.registerContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.divHome h2 {
-  margin: 1rem;
+.registerContainer img {
+  width: 15rem;
+  margin: 2rem;
 }
 
-.divHome p {
-  margin: 1.5rem;
-  text-align: justify;
+.registerDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffad;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.connection-menu button {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.default-button {
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.659);
+}
+
+.default-button:hover {
+  color: #e86cbe;
+}
+
+.selected-button {
+  background-color: #e86cbe;
+  border: 2px solid black;
+}
+
+/*LOGIN && REGISTER*/
+.form-login {
+  border-top: 1px solid #e86cbe;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-button {
+  background-color: #e86cbe;
+  border: none;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  border-radius: 2rem;
 }
 
 /*RESPONSIVE*/
@@ -101,20 +130,5 @@ code {
 
   #tooltipNavbar {
     display: none;
-  }
-
-  /*HOME*/
-
-  #sectionHome h1 {
-    background-image: url(./assets/pictures/Colchis.jpg);
-    font-size: 3.5rem;
-    color: rgb(236, 208, 114);
-    text-shadow: 1px 1px rgb(0, 0, 0);
-    height: 22rem;
-  }
-
-  .divHome p {
-    margin: 0.2rem 10rem 0rem 10rem;
-    text-align: justify;
   }
 }
