@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import KDG from "../assets/Pictures/KDGaming.png";
 import NavbarMenu from "./NavbarMenu";
 import NavbarGaming from "./NavbarGaming";
+import NavbarAccount from "./NavbarAccount";
 
 export default function Navbar() {
   return (
@@ -18,6 +19,7 @@ export default function Navbar() {
         <Link className="linkNavbar" to="/contact">
           Me contacter
         </Link>
+        <NavbarAccount />
         <NavbarMenu />
       </Box>
     </header>

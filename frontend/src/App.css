@@ -101,6 +101,10 @@ section {
   display: none;
 }
 
+#tooltipAccount {
+  display: none;
+}
+
 /*LOGIN && REGISTER*/
 .form-login {
   border-top: 1px solid #e86cbe;
@@ -259,6 +263,10 @@ footer span {
   .tooltip-gaming-title:hover {
     transition: 100ms;
     color: white;
+  }
+
+  #tooltipAccount {
+    display: block;
   }
 
   /*Carousel*/
