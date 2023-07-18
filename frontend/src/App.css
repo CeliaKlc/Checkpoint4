@@ -22,29 +22,26 @@ code {
 }
 
 /*NAVBAR*/
-#logo {
+#headerNavbar {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-#logo img {
-  width: 10rem;
+#headerNavbar img {
+  width: 3rem;
 }
 
-#headerHome ul {
+#headerNavbar {
   display: flex;
-  justify-content: space-around;
-  background-color: #be9b55;
+  justify-content: space-between;
+  background-color: #db88ba;
   padding: 1rem;
-}
-
-#headerHome li {
   cursor: pointer;
-  font-size: 0.9rem;
 }
 
-#headerHome li:hover {
-  color: white;
+.linkNavbar {
+  display: none;
 }
 
 /*HOME*/
@@ -60,19 +57,50 @@ code {
   text-align: center;
   color: rgb(236, 208, 114);
   text-shadow: 1px 1px rgb(0, 0, 0);
-  height: 10rem;
+  height: 15rem;
+}
+
+.divHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divHome h2 {
+  margin: 1rem;
+}
+
+.divHome p {
+  margin: 1.5rem;
+  text-align: justify;
 }
 
 /*RESPONSIVE*/
 @media screen and (min-width: 700px) {
   /*NAVBAR*/
 
-  #logo img {
-    width: 15rem;
+  #headerNavbar img {
+    width: 5rem;
   }
 
-  #headerHome li {
+  #headerNavbar {
     font-size: 1rem;
+    justify-content: space-around;
+    padding: 0.1rem;
+  }
+
+  .linkNavbar {
+    display: block;
+  }
+
+  .linkNavbar:hover {
+    transition: 100ms;
+    color: white;
+    border-bottom: 2px solid white;
+  }
+
+  #tooltipNavbar {
+    display: none;
   }
 
   /*HOME*/
@@ -82,6 +110,11 @@ code {
     font-size: 3.5rem;
     color: rgb(236, 208, 114);
     text-shadow: 1px 1px rgb(0, 0, 0);
-    height: 25rem;
+    height: 22rem;
+  }
+
+  .divHome p {
+    margin: 0.2rem 10rem 0rem 10rem;
+    text-align: justify;
   }
 }
