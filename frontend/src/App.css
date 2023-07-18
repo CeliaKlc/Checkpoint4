@@ -65,6 +65,7 @@ code {
   background-color: #ffffffad;
   padding: 2rem;
   border-radius: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .connection-menu button {
@@ -102,6 +103,7 @@ code {
   padding: 0.5rem;
   margin-top: 1.5rem;
   border-radius: 2rem;
+  cursor: pointer;
 }
 
 /*RESPONSIVE*/
@@ -130,5 +132,17 @@ code {
 
   #tooltipNavbar {
     display: none;
+  }
+}
+
+/*RESPONSIVE GRAND ECRAN*/
+
+@media screen and (min-height: 700px) and (min-width: 1000px) {
+  .registerContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
