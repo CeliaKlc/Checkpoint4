@@ -75,39 +75,43 @@ export default function NavbarMenu() {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleClose}>
-          <Avatar /> Mon compte
-        </MenuItem>
+        <Link style={{ color: "#333" }} to="/profil">
+          <MenuItem onClick={handleClose}>
+            <Avatar /> Mon compte
+          </MenuItem>
+        </Link>
         <Divider />
-        <Link to="/accueil">
+        <Link style={{ color: "#333" }} to="/accueil">
           <MenuItem onClick={handleClose}>
             <RiHomeHeartLine size={25} /> Accueil
           </MenuItem>
         </Link>
-        <Link to="/contact">
+        <Link style={{ color: "#333" }} to="/contact">
           <MenuItem onClick={handleClose}>
             <GrContact size={20} />
             Contact
           </MenuItem>
         </Link>
         <Divider />
-        <Link to="/jeux/among-us">
+        <Link style={{ color: "#333" }} to="/jeux/among-us">
           <MenuItem onClick={handleClose}>Among Us</MenuItem>
         </Link>
-        <Link to="/famille-royal">
+        <Link style={{ color: "#333" }} to="/famille-royal">
           <MenuItem onClick={handleClose}>Overwatch</MenuItem>
-          <Link to="/royaux-actif">
+          <Link style={{ color: "#333" }} to="/royaux-actif">
             <MenuItem onClick={handleClose}> Sims 4</MenuItem>
           </Link>
         </Link>
-        <Link to="/royaux-actif">
+        <Link style={{ color: "#333" }} to="/royaux-actif">
           <MenuItem onClick={handleClose}>Valorant</MenuItem>
         </Link>
         <Divider />
-        <MenuItem onClick={handleClose}>
-          <CgLogOut size={25} />
-          Déconnexion
-        </MenuItem>
+        <Link style={{ color: "#333" }} to="/">
+          <MenuItem onClick={handleClose}>
+            <CgLogOut size={25} />
+            Déconnexion
+          </MenuItem>
+        </Link>
       </Menu>
     </nav>
   );

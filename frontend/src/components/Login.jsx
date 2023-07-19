@@ -13,7 +13,7 @@ import { useAuth } from "../Context/AuthContext";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { setToken } = useAuth();
+  const { setToken, setIsAdmin } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 
   const [username, setUsername] = useState("");
@@ -49,6 +49,7 @@ export default function Login() {
           .then((data) => {
             if (data.token !== null) {
               setToken(data.token);
+              setIsAdmin(data.admin);
               navigate("/accueil");
             }
           });

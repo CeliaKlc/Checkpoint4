@@ -79,21 +79,9 @@ const destroy = (req, res) => {
     });
 };
 
-const scores = (req, res) => {
+const user = (req, res) => {
   models.user
-    .findAllScores()
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const score = (req, res) => {
-  models.user
-    .findScore(req.params.id)
+    .find(req.payload.sub)
     .then(([rows]) => {
       if (rows[0] == null) {
         res.sendStatus(404);
@@ -107,59 +95,15 @@ const score = (req, res) => {
     });
 };
 
-const gallery = (req, res) => {
+const getUser = (req, res) => {
   models.user
-    .findGallery(req.params.id)
+    .find(req.payload.sub)
     .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const galleryByUser = (req, res) => {
-  models.user
-    .findGallery(req.payload.sub)
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const friends = (req, res) => {
-  models.user
-    .findFriends(req.payload.sub)
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const editFriendsRequest = (req, res) => {
-  models.user
-    .findFriendsRequest(req.payload.sub)
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const editFriendsPending = (req, res) => {
-  models.user
-    .findFriendsPending(req.payload.sub)
-    .then(([rows]) => {
-      res.send(rows);
+      if (rows[0] == null) {
+        res.sendStatus(404);
+      } else {
+        res.send(rows[0]);
+      }
     })
     .catch((err) => {
       console.error(err);
@@ -186,12 +130,7 @@ module.exports = {
   edit,
   add,
   destroy,
-  scores,
-  score,
-  gallery,
-  galleryByUser,
-  friends,
-  editFriendsRequest,
-  editFriendsPending,
+  user,
+  getUser,
   getUserByUsernameWithPasswordAndPassToNext,
 };

@@ -28,13 +28,13 @@ const verifyPassword = (req, res) => {
     if (ok) {
       const payload = {
         sub: req.user.id,
-        role: req.user.role,
+        admin: req.user.role,
       };
 
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
         expiresIn: "1h",
       });
-      res.json({ token, role: req.user.role });
+      res.json({ token, admin: req.user.role });
     } else {
       res.sendStatus(401);
     }

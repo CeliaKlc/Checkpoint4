@@ -322,6 +322,50 @@ footer span {
   width: 100%;
 }
 
+/*PROFIL*/
+
+.profilContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.profilContain h1 {
+  font-size: 2rem;
+}
+
+.profilUserInfo h2 {
+  margin-bottom: 1rem;
+}
+
+.profilUserInfo {
+  margin: 2rem;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.607);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+}
+
+.information span {
+  font-weight: 500;
+  padding: 1.5rem 0rem 0.5rem 0rem;
+}
+
+.information p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*RESPONSIVE*/
 @media screen and (min-width: 700px) {
   /*NAVBAR*/
@@ -507,6 +551,23 @@ footer span {
     display: flex;
     flex-direction: column;
     width: 80%;
+  }
+
+  /*PROFIL*/
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: rgba(255, 255, 255, 0.607);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2rem 15rem 2rem 15rem;
+    border-radius: 0.5rem;
+    line-height: 1.5rem;
+  }
+
+  .information p {
+    align-items: start;
   }
 }
 

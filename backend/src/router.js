@@ -46,14 +46,10 @@ router.post(
   verifyPassword
 );
 
-// route veryf
-router.use(verifyToken);
+router.use(verifyToken); // mur d'authentification
 
-// route privé
-
-router.put("/items/:id", itemControllers.edit);
-router.post("/items", itemControllers.add);
-
-router.delete("/items/:id", itemControllers.destroy);
+router.post("/users", userControllers.add);
+router.get("/users", userControllers.browse);
+router.get("/user", userControllers.user);
 
 module.exports = router;
