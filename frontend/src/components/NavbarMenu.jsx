@@ -23,6 +23,12 @@ export default function NavbarMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const styles = {
+    color: "#333",
+    gap: "0.5rem",
+  };
+
   return (
     <nav>
       <Box>
@@ -81,33 +87,41 @@ export default function NavbarMenu() {
           </MenuItem>
         </Link>
         <Divider />
-        <Link style={{ color: "#333" }} to="/accueil">
-          <MenuItem onClick={handleClose}>
+        <Link style={styles} to="/accueil">
+          <MenuItem style={styles} onClick={handleClose}>
             <RiHomeHeartLine size={25} /> Accueil
           </MenuItem>
         </Link>
-        <Link style={{ color: "#333" }} to="/contact">
-          <MenuItem onClick={handleClose}>
+        <Link style={styles} to="/contact">
+          <MenuItem style={styles} onClick={handleClose}>
             <GrContact size={20} />
             Contact
           </MenuItem>
         </Link>
         <Divider />
-        <Link style={{ color: "#333" }} to="/jeux/among-us">
-          <MenuItem onClick={handleClose}>Among Us</MenuItem>
+        <Link style={styles} to="/jeux/among-us">
+          <MenuItem style={styles} onClick={handleClose}>
+            Among Us
+          </MenuItem>
         </Link>
-        <Link style={{ color: "#333" }} to="/famille-royal">
-          <MenuItem onClick={handleClose}>Overwatch</MenuItem>
-          <Link style={{ color: "#333" }} to="/royaux-actif">
-            <MenuItem onClick={handleClose}> Sims 4</MenuItem>
+        <Link style={styles} to="/famille-royal">
+          <MenuItem style={styles} onClick={handleClose}>
+            Overwatch
+          </MenuItem>
+          <Link style={styles} to="/royaux-actif">
+            <MenuItem style={styles} onClick={handleClose}>
+              Sims 4
+            </MenuItem>
           </Link>
         </Link>
-        <Link style={{ color: "#333" }} to="/royaux-actif">
-          <MenuItem onClick={handleClose}>Valorant</MenuItem>
+        <Link style={styles} to="/royaux-actif">
+          <MenuItem style={styles} onClick={handleClose}>
+            Valorant
+          </MenuItem>
         </Link>
         <Divider />
-        <Link style={{ color: "#333" }} to="/">
-          <MenuItem onClick={handleClose}>
+        <Link style={styles} to="/">
+          <MenuItem style={styles} onClick={handleClose}>
             <CgLogOut size={25} />
             Déconnexion
           </MenuItem>

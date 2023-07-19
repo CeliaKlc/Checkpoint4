@@ -356,14 +356,33 @@ footer span {
 }
 
 .information span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 500;
   padding: 1.5rem 0rem 0.5rem 0rem;
+}
+
+.information span:hover {
+  transition: 1000ms;
+  color: #db88ba;
 }
 
 .information p {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.addAdminContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addAdminContain h1 {
+  font-size: 2rem;
 }
 
 /*RESPONSIVE*/

@@ -91,7 +91,7 @@ export default function NavbarAccount() {
                     to="/"
                     onClick={() => setToken(null)}
                   >
-                    <MenuItem onClick={handleClose}>
+                    <MenuItem style={{ gap: "0.5rem" }} onClick={handleClose}>
                       <CgLogOut size={25} />
                       Déconnexion
                     </MenuItem>

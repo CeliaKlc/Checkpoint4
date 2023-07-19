@@ -13,6 +13,11 @@ export default function NavbarGaming() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const styles = {
+    color: "#333",
+  };
+
   return (
     <>
       <Box>
@@ -67,16 +72,16 @@ export default function NavbarGaming() {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <Link to="/jeux/among-us">
+        <Link style={styles} to="/jeux/among-us">
           <MenuItem onClick={handleClose}>Among us</MenuItem>
         </Link>
-        <Link to="/jeux/:id">
+        <Link style={styles} to="/jeux/:id">
           <MenuItem onClick={handleClose}>Overwatch</MenuItem>
         </Link>
-        <Link to="/jeux/:id">
+        <Link style={styles} to="/jeux/:id">
           <MenuItem onClick={handleClose}>Sims 4</MenuItem>
         </Link>
-        <Link to="/jeux/:id">
+        <Link style={styles} to="/jeux/:id">
           <MenuItem onClick={handleClose}>Valorant</MenuItem>
         </Link>
       </Menu>
