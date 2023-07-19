@@ -1,5 +1,4 @@
 import {
-  Box,
   FormControl,
   IconButton,
   Input,
@@ -9,9 +8,16 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const { setToken } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -20,7 +26,34 @@ export default function Login() {
   };
 
   return (
-    <Box sx={{ display: "flex", flexWrap: "wrap" }} className="form-login">
+    <form
+      className="form-login"
+      onSubmit={(event) => {
+        event.preventDefault();
+        fetch(
+          `${
+            import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+          }/login`,
+          {
+            method: "post",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({
+              username,
+              password,
+            }),
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.token !== null) {
+              setToken(data.token);
+              navigate("/accueil");
+            }
+          });
+      }}
+    >
       <h1>Connexion</h1>
       <FormControl
         sx={{ m: 1, width: "25ch" }}
@@ -28,7 +61,13 @@ export default function Login() {
         className="form-line"
       >
         <InputLabel htmlFor="username">Nom d'utilisateur</InputLabel>
-        <Input type="text" id="username" name="username" />
+        <Input
+          type="text"
+          id="username"
+          name="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
       </FormControl>
       <FormControl
         sx={{ m: 1, width: "25ch" }}
@@ -37,6 +76,8 @@ export default function Login() {
       >
         <InputLabel htmlFor="password">Mot de passe</InputLabel>
         <Input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           type={showPassword ? "text" : "password"}
           id="password"
           name="password"
@@ -56,6 +97,6 @@ export default function Login() {
       <button type="submit" className="submit-button">
         Se connecter
       </button>
-    </Box>
+    </form>
   );
 }
