@@ -84,14 +84,14 @@ export default function NavbarMenu() {
             <RiHomeHeartLine size={25} /> Accueil
           </MenuItem>
         </Link>
-        <Link to="/nous-contactez">
+        <Link to="/contact">
           <MenuItem onClick={handleClose}>
             <GrContact size={20} />
             Contact
           </MenuItem>
         </Link>
         <Divider />
-        <Link to="/famille-royal">
+        <Link to="/jeux/among-us">
           <MenuItem onClick={handleClose}>Among Us</MenuItem>
         </Link>
         <Link to="/famille-royal">
