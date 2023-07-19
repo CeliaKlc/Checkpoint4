@@ -45,7 +45,7 @@ export default function Carrousel() {
       className="carouselContainer"
     >
       {datas.map((data) => (
-        <Link to={data.link} key={data.id}>
+        <Link style={{ color: "#333" }} to={data.link} key={data.id}>
           <div>
             <img src={data.picture} alt=" " />
             <div className="overlay">
