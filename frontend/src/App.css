@@ -449,6 +449,36 @@ footer span {
   align-items: center;
 }
 
+.buttonImage {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.659);
+}
+
+.Image span {
+  margin-bottom: 1rem;
+}
+
+.formImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formImage p {
+  padding-top: 0.5rem;
+  color: #db88ba;
+}
+
+.buttonImage:hover {
+  transition: 100ms;
+  color: #e86cbe;
+}
+
 /*ADDADMIN*/
 
 .addAdminContain {
@@ -733,8 +763,11 @@ footer span {
 
   .imageAvatar {
     position: absolute;
-    width: 25rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 5rem;
     right: -1rem;
+    object-fit: cover;
   }
 
   .imageAvatarDefaut {

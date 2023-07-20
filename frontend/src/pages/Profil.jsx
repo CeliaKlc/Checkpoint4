@@ -101,13 +101,13 @@ export default function Profil() {
                   {user.lastname} {user.firstname}
                 </p>
               </div>
-              <div className="Username information">
+              <div className="username information">
                 <p>
                   <span>NOM D'UTILISATEUR</span>
                   {user.username}
                 </p>
               </div>
-              <div className="Mail information">
+              <div className="mail information">
                 <p>
                   <span>E-MAIL</span>
                   {user.mail}
@@ -115,12 +115,14 @@ export default function Profil() {
               </div>
               <div className="Image information">
                 <span>CHANGER D'AVATAR</span>
-                <form onSubmit={hSubmit}>
+                <form className="formImage" onSubmit={hSubmit}>
                   <input type="file" ref={inputRef} />
-                  <button type="submit">Envoyer!</button>
+                  <p>{msg}</p>
+                  <button className="buttonImage" type="submit">
+                    Appliquer
+                  </button>
                 </form>
               </div>
-              <p>{msg}</p>
             </div>
           ))}
         </div>
