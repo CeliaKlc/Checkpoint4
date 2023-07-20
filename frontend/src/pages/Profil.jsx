@@ -1,6 +1,7 @@
 import { BsFillChatHeartFill } from "react-icons/bs";
 import { useEffect, useRef, useState } from "react";
 import { BiChevronsRight } from "react-icons/bi";
+import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -83,45 +84,55 @@ export default function Profil() {
           <h2>Vos informations</h2>
           {informations.map((user) => (
             <div key={user.id} className="userInfo">
-              <div className="firstname information">
-                <h1 style={{ marginBottom: "1rem" }} key={user.id}>
-                  Hello {user.username} <BsFillChatHeartFill color="#db88ba" />
-                </h1>
-                {user && user.image ? (
-                  <img
-                    className="imageAvatar"
-                    src={`${import.meta.env.VITE_BACKEND_URL}${user.image}`}
-                    alt="Avatar"
-                  />
-                ) : (
-                  <img className="imageAvatarDefaut" src={User} alt="Avatar" />
-                )}
-                <p>
-                  <span>NOM & PRENOM</span>
-                  {user.lastname} {user.firstname}
-                </p>
-              </div>
-              <div className="username information">
-                <p>
-                  <span>NOM D'UTILISATEUR</span>
-                  {user.username}
-                </p>
-              </div>
-              <div className="mail information">
-                <p>
-                  <span>E-MAIL</span>
-                  {user.mail}
-                </p>
-              </div>
-              <div className="Image information">
-                <span>CHANGER D'AVATAR</span>
-                <form className="formImage" onSubmit={hSubmit}>
-                  <input type="file" ref={inputRef} />
-                  <p>{msg}</p>
-                  <button className="buttonImage" type="submit">
-                    Appliquer
-                  </button>
-                </form>
+              <h1 style={{ marginBottom: "1rem" }} key={user.id}>
+                Hello {user.username} <BsFillChatHeartFill color="#db88ba" />
+              </h1>
+              <div className="userInfoDiv">
+                <div className="information div2">
+                  {user && user.image ? (
+                    <Avatar
+                      src={`${import.meta.env.VITE_BACKEND_URL}${user.image}`}
+                      alt="Avatar"
+                      sx={{
+                        width: "13rem",
+                        height: "12rem",
+                      }}
+                    />
+                  ) : (
+                    <Avatar
+                      src={User}
+                      alt="Avatar"
+                      sx={{
+                        width: "13rem",
+                        height: "12rem",
+                      }}
+                    />
+                  )}
+                </div>
+                <div className="information div1">
+                  <p>
+                    <span>NOM & PRENOM</span>
+                    {user.lastname} {user.firstname}
+                  </p>
+                  <p>
+                    <span>NOM D'UTILISATEUR</span>
+                    {user.username}
+                  </p>
+                  <p>
+                    <span>E-MAIL</span>
+                    {user.mail}
+                  </p>
+                </div>
+                <div className="information div3">
+                  <span>CHANGER D'AVATAR</span>
+                  <form className="formImage" onSubmit={hSubmit}>
+                    <input type="file" ref={inputRef} />
+                    <p>{msg}</p>
+                    <button className="buttonImage" type="submit">
+                      Appliquer
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           ))}

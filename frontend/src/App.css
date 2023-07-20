@@ -268,17 +268,18 @@ footer span {
 }
 
 /*GAMING*/
-
-/*AMONG US*/
-
 .gamingContain {
-  margin: 1rem;
+  display: flex;
+  text-align: center;
+  background-color: rgba(234, 225, 231, 0.763);
 }
 
 .gamingContain h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
+/*AMONG US*/
 
 .resumeAmong {
   display: flex;
@@ -399,43 +400,23 @@ footer span {
 
 .profilContain h1 {
   font-size: 2rem;
+  margin: 2rem;
 }
 
 .profilUserInfo h2 {
   margin-bottom: 1rem;
 }
 
-.profilUserInfo {
-  margin: 2rem;
-}
-
 .userInfo {
+  background-color: rgba(255, 255, 255, 0.607);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+  margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.607);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 3rem;
-  border-radius: 0.5rem;
-  line-height: 1.5rem;
-}
-
-.imageAvatar {
-  width: 25rem;
-  border-radius: 50%;
-}
-
-.imageAvatarDefaut {
-  width: 10rem;
-}
-
-.information span {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
-  padding: 1.5rem 0rem 0.5rem 0rem;
 }
 
 .information span:hover {
@@ -443,10 +424,13 @@ footer span {
   color: #db88ba;
 }
 
-.information p {
+.information span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1.5rem 0rem 0.5rem 0rem;
+  font-weight: 500;
+  gap: 0.5rem;
 }
 
 .buttonImage {
@@ -457,16 +441,6 @@ footer span {
   color: #333;
   background-color: white;
   border: 2px solid rgba(255, 255, 255, 0.659);
-}
-
-.Image span {
-  margin-bottom: 1rem;
-}
-
-.formImage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .formImage p {
@@ -727,7 +701,15 @@ footer span {
   }
 
   .resumeOw1 caption {
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .gamingContain {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(183, 177, 181, 0.763);
+    min-width: 100vh;
   }
 
   /*COMPOSANT PERSO*/
@@ -746,45 +728,41 @@ footer span {
   /*PROFIL*/
 
   .userInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    background-color: rgba(255, 255, 255, 0.607);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 2rem 15rem 2rem 15rem;
-    border-radius: 0.5rem;
-    line-height: 1.5rem;
-    position: relative;
   }
 
-  .information p {
-    align-items: start;
+  .userInfoDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
   }
 
-  .imageAvatar {
-    position: absolute;
-    width: 20rem;
-    height: 20rem;
-    border-radius: 5rem;
-    right: -1rem;
-    object-fit: cover;
+  .div1 {
+    grid-area: 1 / 1 / 4 / 2;
   }
-
-  .imageAvatarDefaut {
-    position: absolute;
-    width: 13rem;
-    right: 5rem;
+  .div2 {
+    margin-top: 2rem;
+    grid-area: 1 / 2 / 4 / 3;
+  }
+  .div3 {
+    grid-area: 4 / 1 / 5 / 3;
   }
 }
 
 /*RESPONSIVE GRAND ECRAN*/
 
-@media screen and (min-height: 700px) and (min-width: 1000px) {
+@media screen and (min-height: 800px) and (min-width: 1000px) {
   .registerContainer {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .resumeOw1 img {
+    width: 30rem;
   }
 }

@@ -59,14 +59,14 @@ export default function NavbarAccount() {
                       aria-expanded={open ? "true" : undefined}
                     >
                       {informations && informations.image ? (
-                        <img
+                        <Avatar
                           src={`${import.meta.env.VITE_BACKEND_URL}${
                             informations.image
                           }`}
                           alt="Avatar"
-                          style={{
-                            maxWidth: "6rem",
-                            maxHeight: "3.5rem",
+                          sx={{
+                            width: "4rem",
+                            height: "4rem",
                           }}
                         />
                       ) : (
