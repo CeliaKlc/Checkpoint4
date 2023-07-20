@@ -269,6 +269,8 @@ footer span {
 
 /*GAMING*/
 
+/*AMONG US*/
+
 .gamingContain {
   margin: 1rem;
 }
@@ -278,7 +280,7 @@ footer span {
   margin-bottom: 1rem;
 }
 
-.resume {
+.resumeAmong {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -291,7 +293,7 @@ footer span {
   width: fit-content;
 }
 
-.resume h2 {
+.resumeAmong h2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -299,27 +301,90 @@ footer span {
   margin-bottom: 1rem;
 }
 
-.resume img {
+.resumeAmong img {
   width: 22rem;
   border-radius: 1rem;
 }
 
-.resume p {
+.resumeAmong p {
   text-align: justify;
   width: 20rem;
 }
 
-.resume1 p {
+.resumeAmong1 p {
   padding-bottom: 1rem;
 }
 
-.resume2 p {
+.resumeAmong2 p {
   padding-top: 1rem;
 }
 
 .conclusion {
   padding: 1rem;
   width: 100%;
+}
+
+/*OVERWATCH*/
+
+.resumeOw {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resumeOw1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resumeOw1 img {
+  width: 23rem;
+  border-radius: 0.5rem;
+}
+
+.resumeOw1 h3 {
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+
+.resumeOw1 caption {
+  width: 20rem;
+  margin-bottom: 3rem;
+}
+
+.resumeOw2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resumeOw4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.486);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+  margin: 2rem;
+}
+
+/*COMPOSANT PERSO*/
+
+.persoContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18rem;
+  height: 20rem;
+  margin-bottom: 15rem;
+}
+
+.persoContain img {
+  width: 20rem;
+  border-radius: 0.5rem;
 }
 
 /*PROFIL*/
@@ -560,43 +625,44 @@ footer span {
 
   /*GAMING*/
 
+  /*AMONG US*/
   .gamingContain h1 {
     margin-bottom: 2rem;
   }
 
-  .resume {
+  .resumeAmong {
     display: flex;
     flex-direction: row;
   }
 
-  .resume img {
+  .resumeAmong img {
     width: 40rem;
   }
 
-  .resume1 img {
+  .resumeAmong1 img {
     border-radius: 1rem 0rem 0rem 1rem;
   }
 
-  .resume2 img {
+  .resumeAmong2 img {
     border-radius: 0rem 1rem 1rem 0rem;
   }
 
-  .resume p {
+  .resumeAmong p {
     text-align: justify;
     width: 35rem;
   }
 
-  .resume1 p {
+  .resumeAmong1 p {
     padding-bottom: 0rem;
     padding-right: 2rem;
   }
 
-  .resume2 p {
+  .resumeAmong2 p {
     padding-top: 1rem;
     padding-left: 2rem;
   }
 
-  .resume img {
+  .resumeAmong img {
     height: 25rem;
   }
 
@@ -604,6 +670,36 @@ footer span {
     display: flex;
     flex-direction: column;
     width: 80%;
+  }
+
+  /*OVERWATCH*/
+
+  .resumeOw {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .resumeOw1 img {
+    width: 25rem;
+  }
+
+  .resumeOw1 caption {
+    margin-bottom: 2rem;
+  }
+
+  /*COMPOSANT PERSO*/
+
+  .persoContain img {
+    position: absolute;
+    left: 10rem;
+    width: 25rem;
+  }
+
+  .test {
+    text-align: justify;
+    width: 20rem;
   }
 
   /*PROFIL*/

@@ -104,17 +104,17 @@ export default function NavbarMenu() {
             Among Us
           </MenuItem>
         </Link>
-        <Link style={styles} to="/famille-royal">
+        <Link style={styles} to="/jeux/overwatch">
           <MenuItem style={styles} onClick={handleClose}>
             Overwatch
           </MenuItem>
-          <Link style={styles} to="/royaux-actif">
+          <Link style={styles} to="/jeux/sims4">
             <MenuItem style={styles} onClick={handleClose}>
               Sims 4
             </MenuItem>
           </Link>
         </Link>
-        <Link style={styles} to="/royaux-actif">
+        <Link style={styles} to="/jeux/valorant">
           <MenuItem style={styles} onClick={handleClose}>
             Valorant
           </MenuItem>

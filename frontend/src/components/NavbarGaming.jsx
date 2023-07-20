@@ -75,13 +75,13 @@ export default function NavbarGaming() {
         <Link style={styles} to="/jeux/among-us">
           <MenuItem onClick={handleClose}>Among us</MenuItem>
         </Link>
-        <Link style={styles} to="/jeux/:id">
+        <Link style={styles} to="/jeux/overwatch">
           <MenuItem onClick={handleClose}>Overwatch</MenuItem>
         </Link>
-        <Link style={styles} to="/jeux/:id">
+        <Link style={styles} to="/jeux/sims4">
           <MenuItem onClick={handleClose}>Sims 4</MenuItem>
         </Link>
-        <Link style={styles} to="/jeux/:id">
+        <Link style={styles} to="/jeux/valorant">
           <MenuItem onClick={handleClose}>Valorant</MenuItem>
         </Link>
       </Menu>

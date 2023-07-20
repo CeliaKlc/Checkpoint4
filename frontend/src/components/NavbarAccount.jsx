@@ -36,13 +36,12 @@ export default function NavbarAccount() {
                     <IconButton
                       id="tooltipAccount"
                       onClick={handleClick}
-                      size="small"
                       sx={{ ml: 2 }}
                       aria-controls={open ? "navbar-menu" : undefined}
                       aria-haspopup="true"
                       aria-expanded={open ? "true" : undefined}
                     >
-                      <Avatar />
+                      <Avatar sx={{ width: "3.5rem", height: "3.5rem" }} />
                     </IconButton>
                   </Tooltip>
                 </Box>
