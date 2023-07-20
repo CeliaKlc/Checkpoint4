@@ -8,7 +8,6 @@ import Profil from "./pages/Profil";
 import AddAdmin from "./pages/AddAdmin";
 import { useAuth } from "./Context/AuthContext";
 import ViewUser from "./pages/ViewUser";
-import AddSection from "./pages/AddSection";
 import Overwatch from "./pageGaming/Overwatch";
 import Sims4 from "./pageGaming/Sims4";
 import Valo from "./pageGaming/Valo";
@@ -26,7 +25,6 @@ function App() {
             <Route path="/profil" element={<Profil />} />
             <Route path="/ajouter-un-administrateur" element={<AddAdmin />} />
             <Route path="/utilisateurs" element={<ViewUser />} />
-            <Route path="/ajouter-un-article" element={<AddSection />} />
             {/* Routes PAGEGAMING */}
             <Route path="/jeux/among-us" element={<AmongUs />} />
             <Route path="/jeux/overwatch" element={<Overwatch />} />

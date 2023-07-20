@@ -1,5 +1,4 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import map1 from "../assets/Pictures/Overwatch/Map1.png";
 import map2 from "../assets/Pictures/Overwatch/Map2.png";
@@ -81,15 +80,13 @@ export default function OverwatchCartes() {
       className="carouselContainer"
     >
       {datas.map((data) => (
-        <Link style={{ color: "#333" }} to={data.link} key={data.id}>
-          <div>
-            <img src={data.picture} alt=" " />
-            <div className="overlay">
-              <h2 className="overlay-title">{data.legend}</h2>
-              <p>{data.description}</p>
-            </div>
+        <div key={data.id}>
+          <img src={data.picture} alt=" " />
+          <div className="overlay">
+            <h2 className="overlay-title">{data.legend}</h2>
+            <p>{data.description}</p>
           </div>
-        </Link>
+        </div>
       ))}
     </Carousel>
   );

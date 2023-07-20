@@ -30,6 +30,14 @@ section {
   justify-content: center;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
 /*NAVBAR*/
 #headerNavbar {
   display: flex;
@@ -255,7 +263,6 @@ footer span {
   align-items: center;
   justify-content: center;
   margin: 1rem;
-  font-size: 2.8rem;
 }
 
 .contact-epilogue p {
@@ -275,7 +282,6 @@ footer span {
 }
 
 .gamingContain h1 {
-  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -298,7 +304,6 @@ footer span {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.7em;
   margin-bottom: 1rem;
 }
 
@@ -354,12 +359,6 @@ footer span {
   margin-bottom: 3rem;
 }
 
-.resumeOw2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .resumeOw4 {
   display: flex;
   flex-direction: column;
@@ -378,14 +377,47 @@ footer span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 18rem;
-  height: 20rem;
-  margin-bottom: 15rem;
+  margin-bottom: 3rem;
 }
 
-.persoContain img {
+.h2ow {
+  margin-bottom: 2rem;
+}
+
+.tankImage,
+.dpsImage,
+.supportImage {
   width: 20rem;
-  border-radius: 0.5rem;
+}
+
+.buttonsPerso button {
+  margin: 2rem;
+  border-radius: 100%;
+  padding: 1rem;
+}
+
+.buttonTest {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.529);
+}
+
+.active {
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.81);
+}
+
+.damages {
+  width: 2rem;
+}
+
+.persosTest p {
+  font-size: 1.5rem;
+  text-align: justify;
+  width: 20rem;
+}
+
+.persosTest h2 {
+  text-align: center;
 }
 
 /*PROFIL*/
@@ -399,7 +431,6 @@ footer span {
 }
 
 .profilContain h1 {
-  font-size: 2rem;
   margin: 2rem;
 }
 
@@ -461,15 +492,7 @@ footer span {
   align-items: center;
 }
 
-.addAdminContain h1 {
-  font-size: 2rem;
-}
-
 /*VIEWUSER*/
-
-.viewUserContain h1 {
-  font-size: 2rem;
-}
 
 .arrayViewUser {
   display: flex;
@@ -492,11 +515,6 @@ footer span {
 .returnViewUser:hover {
   transition: 100ms;
   color: #e86cbe;
-}
-
-/*ADDSECTION*/
-.addSectionContain h1 {
-  font-size: 2rem;
 }
 
 /*RESPONSIVE*/
@@ -562,10 +580,6 @@ footer span {
 
   .homeContain {
     padding-bottom: 2rem;
-  }
-
-  .homeContain h1 {
-    font-size: 2rem;
   }
 
   .homeContain h3 {
@@ -708,23 +722,60 @@ footer span {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(183, 177, 181, 0.763);
+    background-color: rgba(183, 177, 181, 0.856);
     min-width: 100vh;
   }
 
   /*COMPOSANT PERSO*/
-
-  .persoContain img {
-    position: absolute;
-    left: 10rem;
-    width: 25rem;
+  .PersoContaine {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 19px;
+    margin-bottom: 5rem;
   }
 
-  .test {
-    text-align: justify;
-    width: 20rem;
+  .tankImage {
+    width: 40rem;
   }
 
+  .dpsImage {
+    width: 32rem;
+  }
+
+  .supportImage {
+    width: 30rem;
+  }
+
+  .buttonsPerso {
+    display: flex;
+    justify-content: end;
+  }
+
+  .buttonsPerso button {
+    cursor: pointer;
+  }
+
+  .buttonTest:hover {
+    transition: 1000ms;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.441);
+  }
+
+  .active {
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.441);
+  }
+
+  .persosTest {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .persosTest p {
+    font-size: 1.5rem;
+    margin-left: 5rem;
+  }
   /*PROFIL*/
 
   .userInfo {
@@ -763,6 +814,6 @@ footer span {
   }
 
   .resumeOw1 img {
-    width: 30rem;
+    width: 35rem;
   }
 }

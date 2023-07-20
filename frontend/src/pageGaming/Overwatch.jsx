@@ -37,27 +37,25 @@ export default function Overwatch() {
       <Navbar />
       <section className="gamingContain">
         <h1>Overwatch 2</h1>
-        <div className="tesst">
-          <h2>5 VS 5</h2>
-          <div className="resumeOw">
-            {dataFight.map((fight) => (
-              <div className="resumeOw1" key={fight.title}>
-                <img src={fight.picture} alt={fight.title} />
-                <caption>
-                  <h3>{fight.title}</h3>
-                  {fight.caption}
-                </caption>
-              </div>
-            ))}
-          </div>
+        <h2 className="h2ow">5 VS 5</h2>
+        <div className="resumeOw">
+          {dataFight.map((fight) => (
+            <div className="resumeOw1" key={fight.title}>
+              <img src={fight.picture} alt={fight.title} />
+              <caption>
+                <h3>{fight.title}</h3>
+                {fight.caption}
+              </caption>
+            </div>
+          ))}
         </div>
-        <h2>Les Personnages</h2>
+        <h2>Les Rôles</h2>
         <div className="resumeOw">
           <div className="resumeOw2">
             <OverwatchPerso />
           </div>
         </div>
-        <h2>Les Cartes</h2>
+        <h2 className="h2ow">Les Cartes</h2>
         <div className="resumeOw">
           <div className="resumeOw3">
             <OverwatchCartes />

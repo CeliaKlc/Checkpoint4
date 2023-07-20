@@ -21,10 +21,6 @@ export default function Profil() {
       route: "/ajouter-un-administrateur",
     },
     {
-      categorie: "AJOUTER UN ARTICLE",
-      route: "/ajouter-un-article",
-    },
-    {
       categorie: "VOIR LES UTILISATEURS",
       route: "/utilisateurs",
     },
