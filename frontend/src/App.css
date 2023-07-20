@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +13,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e9dae3;
+  background-image: url("./assets/Pictures/Fleur.png");
+  color: #333;
 }
 
 code {
@@ -12,45 +23,768 @@ code {
     monospace;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/*NAVBAR*/
+#headerNavbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#headerNavbar img {
+  width: 3rem;
+}
+
+#headerNavbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #db88ba;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.linkNavbar {
+  display: none;
+}
+
+/*REGISTER*/
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registerContainer img {
+  width: 15rem;
+  margin: 2rem;
+}
+
+.registerDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffad;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.connection-menu button {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.default-button {
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.659);
+}
+
+.default-button:hover {
+  color: #e86cbe;
+}
+
+.selected-button {
+  background-color: #e86cbe;
+  border: 2px solid black;
+}
+
+#tooltipGaming {
+  display: none;
+}
+
+#tooltipAccount {
+  display: none;
+}
+
+/*LOGIN && REGISTER*/
+.form-login {
+  border-top: 1px solid #e86cbe;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-button {
+  background-color: #e86cbe;
+  border: none;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+/*HOME*/
+
+.homeContain {
+  margin: 1rem;
+}
+
+.homeContain h1 {
+  margin-bottom: 1rem;
+}
+
+.homeContain h3 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+.homeContain p {
+  text-align: justify;
+  margin: 0rem 1.5rem 2rem 1.5rem;
+  position: relative;
+}
+
+.homediv {
+  background-color: rgba(255, 255, 255, 0.486);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.homedivChat {
+  position: absolute;
+  width: 4rem;
+  transform: translateY(-110%);
+}
+
+.homedivGG {
+  position: absolute;
+  width: 5.4rem;
+  transform: translateY(-5%);
+  right: -1rem;
+}
+
+/*Carousel*/
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  border: 5px solid rgba(0, 0, 0, 0.74);
+  border-radius: 1.4rem;
+}
+
+.carouselContainer .overlay {
+  width: 80%;
+  position: absolute;
+  top: 85%;
+  transform: translateY(-50%);
+  left: 10%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(254, 254, 254, 0.545);
+}
+
+.carouselContainer img {
+  height: 13rem;
+  border-radius: 1rem;
+}
+
+/*FOOTER*/
+footer {
+  background-color: #db88ba;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 10rem;
+  padding-bottom: 1rem;
+}
+
+footer span {
+  text-align: center;
+}
+
+.speak {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 3rem 1rem 3rem;
+}
+
+.footerSpan {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.speak img {
+  width: 19rem;
+}
+
+.footerSommaire {
+  text-align: justify;
+}
+
+.footerSommaire li {
+  line-height: 1.5rem;
+  text-decoration: underline 1px white;
+}
+
+/*CONTACT*/
+.contactContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 0rem 10rem;
+}
+
+.form-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-epilogue {
+  width: 20rem;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+.contact-epilogue h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  font-size: 2.8rem;
+}
+
+.contact-epilogue p {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+
+.submit-contact {
+  margin-top: 2rem;
+}
+
+/*GAMING*/
+
+/*AMONG US*/
+
+.gamingContain {
+  margin: 1rem;
+}
+
+.gamingContain h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.resumeAmong {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.486);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+
+.resumeAmong h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7em;
+  margin-bottom: 1rem;
+}
+
+.resumeAmong img {
+  width: 22rem;
+  border-radius: 1rem;
+}
+
+.resumeAmong p {
+  text-align: justify;
+  width: 20rem;
+}
+
+.resumeAmong1 p {
+  padding-bottom: 1rem;
+}
+
+.resumeAmong2 p {
+  padding-top: 1rem;
+}
+
+.conclusion {
+  padding: 1rem;
+  width: 100%;
+}
+
+/*OVERWATCH*/
+
+.resumeOw {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resumeOw1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resumeOw1 img {
+  width: 23rem;
+  border-radius: 0.5rem;
+}
+
+.resumeOw1 h3 {
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+
+.resumeOw1 caption {
+  width: 20rem;
+  margin-bottom: 3rem;
+}
+
+.resumeOw2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resumeOw4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.486);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+  margin: 2rem;
+}
+
+/*COMPOSANT PERSO*/
+
+.persoContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18rem;
+  height: 20rem;
+  margin-bottom: 15rem;
+}
+
+.persoContain img {
+  width: 20rem;
+  border-radius: 0.5rem;
+}
+
+/*PROFIL*/
+
+.profilContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.profilContain h1 {
+  font-size: 2rem;
+}
+
+.profilUserInfo h2 {
+  margin-bottom: 1rem;
+}
+
+.profilUserInfo {
+  margin: 2rem;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.607);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+}
+
+.imageAvatar {
+  width: 25rem;
+  border-radius: 50%;
+}
+
+.imageAvatarDefaut {
+  width: 10rem;
+}
+
+.information span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  padding: 1.5rem 0rem 0.5rem 0rem;
+}
+
+.information span:hover {
+  transition: 1000ms;
+  color: #db88ba;
+}
+
+.information p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonImage {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.659);
+}
+
+.Image span {
+  margin-bottom: 1rem;
+}
+
+.formImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formImage p {
+  padding-top: 0.5rem;
+  color: #db88ba;
+}
+
+.buttonImage:hover {
+  transition: 100ms;
+  color: #e86cbe;
+}
+
+/*ADDADMIN*/
+
+.addAdminContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addAdminContain h1 {
+  font-size: 2rem;
+}
+
+/*VIEWUSER*/
+
+.viewUserContain h1 {
+  font-size: 2rem;
+}
+
+.arrayViewUser {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.795);
+  border-radius: 0.5rem;
+  margin: 2rem;
+}
+
+.returnViewUser {
+  margin: 2rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  font-size: 1rem;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.659);
+}
+
+.returnViewUser:hover {
+  transition: 100ms;
+  color: #e86cbe;
+}
+
+/*ADDSECTION*/
+.addSectionContain h1 {
+  font-size: 2rem;
+}
+
+/*RESPONSIVE*/
+@media screen and (min-width: 700px) {
+  /*NAVBAR*/
+
+  #headerNavbar img {
+    width: 5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  #headerNavbar {
+    font-size: 1rem;
+    justify-content: space-around;
+    padding: 0.1rem;
+  }
+
+  .linkNavbar {
+    display: block;
+    padding: 0.2rem;
+    border-radius: 10rem;
+    color: #333;
+    font-size: 1.1rem;
+  }
+
+  .linkNavbar:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    transition: 100ms;
+    color: white;
+  }
+
+  #tooltipNavbar {
+    display: none;
+  }
+
+  #tooltipGaming {
+    display: block;
+  }
+
+  .tooltip-gaming-title:hover {
+    transition: 100ms;
+    color: white;
+  }
+
+  #tooltipAccount {
+    display: block;
+  }
+
+  /*Carousel*/
+  .carouselContainer {
+    width: 60rem;
+  }
+
+  .carouselContainer img {
+    height: 30rem;
+  }
+
+  .carouselContainer .overlay {
+    top: 87%;
+    font-size: 1.5rem;
+  }
+
+  /*HOME*/
+
+  .homeContain {
+    padding-bottom: 2rem;
+  }
+
+  .homeContain h1 {
+    font-size: 2rem;
+  }
+
+  .homeContain h3 {
+    margin: 2rem;
+    font-size: 1.7rem;
+  }
+
+  .homeContain p {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin: 0rem 5rem 2rem 5rem;
+  }
+
+  .homediv {
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 0.5rem;
+    margin: 1rem 20rem 0rem 20rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .homedivChat {
+    position: absolute;
+    width: 5rem;
+    transform: translateY(-110%);
+  }
+
+  .homedivGG {
+    position: absolute;
+    width: 5.4rem;
+    transform: translateY(-5%);
+    right: -5rem;
+  }
+
+  /*FOOTER*/
+  .footerContain {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footerSommaire {
+    width: 20rem;
+  }
+
+  .form-contact {
+    margin-top: 5rem;
+  }
+
+  .footerSommaire ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /*CONTACT*/
+  .contactContain {
+    flex-direction: row;
+    gap: 20rem;
+  }
+
+  .contact-epilogue {
+    width: 30rem;
+  }
+
+  .contact-epilogue h1 {
+    font-size: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .contact-epilogue h1:hover {
+    color: #e86cbe;
+  }
+
+  /*GAMING*/
+
+  /*AMONG US*/
+  .gamingContain h1 {
+    margin-bottom: 2rem;
+  }
+
+  .resumeAmong {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .resumeAmong img {
+    width: 40rem;
+  }
+
+  .resumeAmong1 img {
+    border-radius: 1rem 0rem 0rem 1rem;
+  }
+
+  .resumeAmong2 img {
+    border-radius: 0rem 1rem 1rem 0rem;
+  }
+
+  .resumeAmong p {
+    text-align: justify;
+    width: 35rem;
+  }
+
+  .resumeAmong1 p {
+    padding-bottom: 0rem;
+    padding-right: 2rem;
+  }
+
+  .resumeAmong2 p {
+    padding-top: 1rem;
+    padding-left: 2rem;
+  }
+
+  .resumeAmong img {
+    height: 25rem;
+  }
+
+  .conclusion {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  /*OVERWATCH*/
+
+  .resumeOw {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .resumeOw1 img {
+    width: 25rem;
+  }
+
+  .resumeOw1 caption {
+    margin-bottom: 2rem;
+  }
+
+  /*COMPOSANT PERSO*/
+
+  .persoContain img {
+    position: absolute;
+    left: 10rem;
+    width: 25rem;
+  }
+
+  .test {
+    text-align: justify;
+    width: 20rem;
+  }
+
+  /*PROFIL*/
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: rgba(255, 255, 255, 0.607);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2rem 15rem 2rem 15rem;
+    border-radius: 0.5rem;
+    line-height: 1.5rem;
+    position: relative;
+  }
+
+  .information p {
+    align-items: start;
+  }
+
+  .imageAvatar {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 5rem;
+    right: -1rem;
+    object-fit: cover;
+  }
+
+  .imageAvatarDefaut {
+    position: absolute;
+    width: 13rem;
+    right: 5rem;
   }
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+/*RESPONSIVE GRAND ECRAN*/
+
+@media screen and (min-height: 700px) and (min-width: 1000px) {
+  .registerContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
