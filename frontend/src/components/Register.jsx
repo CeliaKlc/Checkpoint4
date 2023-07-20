@@ -15,6 +15,8 @@ export default function Register({ setIsLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [isError, setIsError] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -39,6 +41,8 @@ export default function Register({ setIsLogin }) {
               "content-type": "application/json",
             },
             body: JSON.stringify({
+              lastname,
+              firstname,
               username,
               password,
               email,
@@ -59,6 +63,34 @@ export default function Register({ setIsLogin }) {
         variant="standard"
         className="form-line"
       >
+        <InputLabel htmlFor="lastname">Nom</InputLabel>
+        <Input
+          type="text"
+          id="lastname"
+          name="lastname"
+          value={lastname}
+          onChange={(e) => setLastname(e.target.value)}
+        />
+      </FormControl>
+      <FormControl
+        sx={{ m: 1, width: "25ch" }}
+        variant="standard"
+        className="form-line"
+      >
+        <InputLabel htmlFor="firstname">Prénom</InputLabel>
+        <Input
+          type="text"
+          id="firstname"
+          name="firstname"
+          value={firstname}
+          onChange={(e) => setFirstname(e.target.value)}
+        />
+      </FormControl>
+      <FormControl
+        sx={{ m: 1, width: "25ch" }}
+        variant="standard"
+        className="form-line"
+      >
         <InputLabel htmlFor="username">Nom d'utilisateur</InputLabel>
         <Input
           type="text"
@@ -73,11 +105,11 @@ export default function Register({ setIsLogin }) {
         variant="standard"
         className="form-line"
       >
-        <InputLabel htmlFor="username">Adresse Mail</InputLabel>
+        <InputLabel htmlFor="email">Adresse Mail</InputLabel>
         <Input
           type="text"
-          id="username"
-          name="username"
+          id="email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />

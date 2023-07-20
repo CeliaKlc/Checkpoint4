@@ -18,11 +18,11 @@ export default function Profil() {
     },
     {
       categorie: "AJOUTER UN ARTICLE",
-      route: "/",
+      route: "/ajouter-un-article",
     },
     {
       categorie: "VOIR LES UTILISATEURS",
-      route: "/",
+      route: "/utilisateurs",
     },
   ];
 

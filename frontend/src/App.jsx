@@ -7,6 +7,8 @@ import Contact from "./pages/Contact";
 import Profil from "./pages/Profil";
 import AddAdmin from "./pages/AddAdmin";
 import { useAuth } from "./Context/AuthContext";
+import ViewUser from "./pages/ViewUser";
+import AddSection from "./pages/AddSection";
 
 function App() {
   const { token } = useAuth();
@@ -21,6 +23,8 @@ function App() {
             <Route path="/profil" element={<Profil />} />
             <Route path="/jeux/among-us" element={<AmongUs />} />
             <Route path="/ajouter-un-administrateur" element={<AddAdmin />} />
+            <Route path="/utilisateurs" element={<ViewUser />} />
+            <Route path="/ajouter-un-article" element={<AddSection />} />
           </>
         )}
         <Route path="*" element={<Connection />} />

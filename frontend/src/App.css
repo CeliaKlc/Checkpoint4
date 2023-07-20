@@ -385,6 +385,40 @@ footer span {
   font-size: 2rem;
 }
 
+/*VIEWUSER*/
+
+.viewUserContain h1 {
+  font-size: 2rem;
+}
+
+.arrayViewUser {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.795);
+  border-radius: 0.5rem;
+  margin: 2rem;
+}
+
+.returnViewUser {
+  margin: 2rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  font-size: 1rem;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.659);
+}
+
+.returnViewUser:hover {
+  transition: 100ms;
+  color: #e86cbe;
+}
+
+/*ADDSECTION*/
+.addSectionContain h1 {
+  font-size: 2rem;
+}
+
 /*RESPONSIVE*/
 @media screen and (min-width: 700px) {
   /*NAVBAR*/
