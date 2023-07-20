@@ -45,6 +45,20 @@ class UserManager extends AbstractManager {
       [req.body.imgURL, req.payload.sub]
     );
   }
+
+  create(user) {
+    return this.database.query(
+      `insert into ${this.table} (firstname,lastname ,username, password, mail, is_admin) values (?, ?, ?, ?, ?, ?)`,
+      [
+        user.firstname,
+        user.lastname,
+        user.username,
+        user.hashedPassword,
+        user.email,
+        true,
+      ]
+    );
+  }
 }
 
 module.exports = UserManager;

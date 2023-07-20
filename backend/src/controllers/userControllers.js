@@ -140,6 +140,23 @@ const image = (req, res) => {
     });
 };
 
+const addAdmin = (req, res) => {
+  models.Admin.create({
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    username: req.body.username,
+    password: req.body.password,
+    email: req.body.email,
+  })
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   browse,
   read,
@@ -150,4 +167,5 @@ module.exports = {
   getUser,
   getUserByUsernameWithPasswordAndPassToNext,
   image,
+  addAdmin,
 };

@@ -65,4 +65,5 @@ router.post("/users", userControllers.add);
 router.get("/users", userControllers.browse);
 router.get("/user", userControllers.user);
 
+router.post("/admins", userControllers.addAdmin);
 module.exports = router;

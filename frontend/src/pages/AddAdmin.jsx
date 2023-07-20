@@ -17,6 +17,8 @@ export default function AddAdmin({ setIsLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [isError, setIsError] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -24,6 +26,7 @@ export default function AddAdmin({ setIsLogin }) {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
   return (
     <>
       <Navbar />
@@ -37,13 +40,15 @@ export default function AddAdmin({ setIsLogin }) {
             fetch(
               `${
                 import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-              }/users`,
+              }/admins`,
               {
                 method: "post",
                 headers: {
                   "content-type": "application/json",
                 },
                 body: JSON.stringify({
+                  firstname,
+                  lastname,
                   username,
                   password,
                   email,
@@ -58,6 +63,34 @@ export default function AddAdmin({ setIsLogin }) {
             });
           }}
         >
+          <FormControl
+            sx={{ m: 1, width: "25ch" }}
+            variant="standard"
+            className="form-line"
+          >
+            <InputLabel htmlFor="lastname">Nom</InputLabel>
+            <Input
+              type="text"
+              id="lastname"
+              name="lastname"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+            />
+          </FormControl>
+          <FormControl
+            sx={{ m: 1, width: "25ch" }}
+            variant="standard"
+            className="form-line"
+          >
+            <InputLabel htmlFor="firstname">Prénom</InputLabel>
+            <Input
+              type="text"
+              id="firstname"
+              name="firstname"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+            />
+          </FormControl>
           <FormControl
             sx={{ m: 1, width: "25ch" }}
             variant="standard"
