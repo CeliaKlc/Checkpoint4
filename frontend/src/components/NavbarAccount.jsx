@@ -63,7 +63,8 @@ export default function NavbarAccount() {
                           src={`${import.meta.env.VITE_BACKEND_URL}${
                             informations.image
                           }`}
-                          alt=""
+                          alt="Avatar"
+                          style={{ width: "rem", height: "3.5rem" }}
                         />
                       ) : (
                         <Avatar sx={{ width: "3.5rem", height: "3.5rem" }} />

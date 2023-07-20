@@ -420,8 +420,13 @@ footer span {
   line-height: 1.5rem;
 }
 
-.userInfo img {
-  width: 20rem;
+.imageAvatar {
+  width: 25rem;
+  border-radius: 50%;
+}
+
+.imageAvatarDefaut {
+  width: 10rem;
 }
 
 .information span {
@@ -443,6 +448,8 @@ footer span {
   flex-direction: column;
   align-items: center;
 }
+
+/*ADDADMIN*/
 
 .addAdminContain {
   display: flex;
@@ -717,10 +724,23 @@ footer span {
     padding: 2rem 15rem 2rem 15rem;
     border-radius: 0.5rem;
     line-height: 1.5rem;
+    position: relative;
   }
 
   .information p {
     align-items: start;
+  }
+
+  .imageAvatar {
+    position: absolute;
+    width: 25rem;
+    right: -1rem;
+  }
+
+  .imageAvatarDefaut {
+    position: absolute;
+    width: 13rem;
+    right: 5rem;
   }
 }
 

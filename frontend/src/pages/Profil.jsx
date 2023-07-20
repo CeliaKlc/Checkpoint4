@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useAuth } from "../Context/AuthContext";
+import User from "../assets/Pictures/user.png";
 
 export default function Profil() {
   const { isAdmin } = useAuth();
@@ -82,14 +83,19 @@ export default function Profil() {
           <h2>Vos informations</h2>
           {informations.map((user) => (
             <div key={user.id} className="userInfo">
-              <img
-                src={`${import.meta.env.VITE_BACKEND_URL}${user.image}`}
-                alt=""
-              />
               <div className="firstname information">
                 <h1 style={{ marginBottom: "1rem" }} key={user.id}>
                   Hello {user.username} <BsFillChatHeartFill color="#db88ba" />
                 </h1>
+                {user && user.image ? (
+                  <img
+                    className="imageAvatar"
+                    src={`${import.meta.env.VITE_BACKEND_URL}${user.image}`}
+                    alt="Avatar"
+                  />
+                ) : (
+                  <img className="imageAvatarDefaut" src={User} alt="Avatar" />
+                )}
                 <p>
                   <span>NOM & PRENOM</span>
                   {user.lastname} {user.firstname}
