@@ -18,19 +18,19 @@ export default function Carrousel() {
       id: "2",
       legend: "Overwatch",
       picture: Ow,
-      link: " ",
+      link: "/jeux/overwatch",
     },
     {
       id: "3",
       legend: "Valorant",
       picture: Valo,
-      link: " ",
+      link: "/jeux/valo",
     },
     {
       id: "4",
       legend: "Les Sims 4",
       picture: Sims,
-      link: " ",
+      link: "/jeux/sims4",
     },
   ];
 
