@@ -64,7 +64,7 @@ export default function NavbarAccount() {
                             informations.image
                           }`}
                           alt="Avatar"
-                          style={{ width: "rem", height: "3.5rem" }}
+                          style={{ width: "6.5rem", height: "3.5rem" }}
                         />
                       ) : (
                         <Avatar sx={{ width: "3.5rem", height: "3.5rem" }} />
