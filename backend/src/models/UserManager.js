@@ -38,6 +38,13 @@ class UserManager extends AbstractManager {
       [username]
     );
   }
+
+  new(req) {
+    return this.database.query(
+      `update ${this.table} set image = ? where id = ?`,
+      [req.body.imgURL, req.payload.sub]
+    );
+  }
 }
 
 module.exports = UserManager;

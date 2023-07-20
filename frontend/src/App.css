@@ -420,6 +420,10 @@ footer span {
   line-height: 1.5rem;
 }
 
+.userInfo img {
+  width: 20rem;
+}
+
 .information span {
   cursor: pointer;
   display: flex;

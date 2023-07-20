@@ -1,5 +1,5 @@
 import { BsFillChatHeartFill } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiChevronsRight } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -10,6 +10,8 @@ export default function Profil() {
   const { isAdmin } = useAuth();
   const [informations, setInformations] = useState([]);
   const { token } = useAuth();
+  const [msg, setMsg] = useState("Aucun upload effectué");
+  const inputRef = useRef();
 
   const adminInfo = [
     {
@@ -42,6 +44,32 @@ export default function Profil() {
       });
   };
 
+  const hSubmit = (evt) => {
+    evt.preventDefault();
+
+    const formData = new FormData();
+    formData.append("avatar", inputRef.current.files[0]);
+
+    fetch(
+      `${
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+      }/api/avatar`,
+      {
+        method: "post",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      }
+    )
+      .then(() => {
+        setMsg("Upload réussi veuillez recharger la page !");
+      })
+      .catch(() => {
+        setMsg("Upload échoué !");
+      });
+  };
+
   useEffect(() => {
     fetchInformationsData();
   }, []);
@@ -56,6 +84,10 @@ export default function Profil() {
               <h2>Vos informations</h2>
               {informations.map((user) => (
                 <div key={user.id} className="userInfo">
+                  <img
+                    src={`${import.meta.env.VITE_BACKEND_URL}${user.image}`}
+                    alt=""
+                  />
                   <div className="firstname information">
                     <p>
                       <span>NOM & PRENOM</span>
@@ -74,6 +106,11 @@ export default function Profil() {
                       {user.mail}
                     </p>
                   </div>
+                  <form onSubmit={hSubmit}>
+                    <input type="file" ref={inputRef} />
+                    <button type="submit">Envoyer!</button>
+                  </form>
+                  <p>{msg}</p>
                 </div>
               ))}
             </div>

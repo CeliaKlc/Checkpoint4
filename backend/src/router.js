@@ -1,5 +1,10 @@
 const express = require("express");
 
+// Ajout de multer
+const multer = require("multer");
+
+const upload = multer({ dest: "./public/uploads/" });
+
 const router = express.Router();
 
 const cors = require("cors");
@@ -15,6 +20,7 @@ const {
   hashPassword,
   verifyPassword,
   verifyToken,
+  uploadRename,
 } = require("./Middleware/auth");
 
 // require des controllers
@@ -48,6 +54,13 @@ router.post(
 
 router.use(verifyToken); // mur d'authentification
 
+// multer
+router.post(
+  "/api/avatar",
+  upload.single("avatar"),
+  uploadRename,
+  userControllers.image
+);
 router.post("/users", userControllers.add);
 router.get("/users", userControllers.browse);
 router.get("/user", userControllers.user);

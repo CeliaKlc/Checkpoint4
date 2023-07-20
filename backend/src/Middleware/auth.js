@@ -2,6 +2,8 @@ const argon2 = require("argon2");
 
 const jwt = require("jsonwebtoken");
 
+const fs = require("fs");
+
 const hashingOptions = {
   type: argon2.argon2id,
   memoryCost: 2 ** 16,
@@ -65,4 +67,22 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-module.exports = { hashPassword, verifyPassword, verifyToken };
+const uploadRename = (req, res, next) => {
+  const { fieldname, filename, mimetype, destination } = req.file;
+  const newFileName = `${fieldname}-${req.payload.sub}`;
+  const typeFile = mimetype.replace("image/", "");
+  req.body.imgURL = `${destination.replace(
+    "./public",
+    ""
+  )}${newFileName}.${typeFile}`;
+  fs.rename(
+    `${destination}${filename}`,
+    `${destination}${newFileName}.${typeFile}`,
+    (err) => {
+      if (err) throw err;
+      next();
+    }
+  );
+};
+
+module.exports = { hashPassword, verifyPassword, verifyToken, uploadRename };
