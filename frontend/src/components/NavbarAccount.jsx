@@ -7,13 +7,14 @@ import {
   Tooltip,
 } from "@mui/material";
 import { CgLogOut } from "react-icons/cg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 
 export default function NavbarAccount() {
   const { token, setToken } = useAuth();
   const [anchorEl, setAnchorEl] = useState(null);
+  const [informations, setInformations] = useState();
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -22,6 +23,22 @@ export default function NavbarAccount() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  useEffect(() => {
+    fetch(
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/user`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => setInformations(data))
+      .catch((error) => {
+        console.error("Error fetching informations data:", error);
+      });
+  }, []);
   return (
     <nav className="header">
       <nav>
@@ -41,7 +58,16 @@ export default function NavbarAccount() {
                       aria-haspopup="true"
                       aria-expanded={open ? "true" : undefined}
                     >
-                      <Avatar sx={{ width: "3.5rem", height: "3.5rem" }} />
+                      {informations && informations.image ? (
+                        <img
+                          src={`${import.meta.env.VITE_BACKEND_URL}${
+                            informations.image
+                          }`}
+                          alt=""
+                        />
+                      ) : (
+                        <Avatar sx={{ width: "3.5rem", height: "3.5rem" }} />
+                      )}
                     </IconButton>
                   </Tooltip>
                 </Box>

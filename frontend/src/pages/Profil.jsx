@@ -77,55 +77,53 @@ export default function Profil() {
     <>
       <Navbar />
       <section className="profilContain">
-        {isAdmin !== 1 && (
-          <>
-            <h1>Mon compte</h1>
-            <div className="profilUserInfo">
-              <h2>Vos informations</h2>
-              {informations.map((user) => (
-                <div key={user.id} className="userInfo">
-                  <img
-                    src={`${import.meta.env.VITE_BACKEND_URL}${user.image}`}
-                    alt=""
-                  />
-                  <div className="firstname information">
-                    <p>
-                      <span>NOM & PRENOM</span>
-                      {user.lastname} {user.firstname}
-                    </p>
-                  </div>
-                  <div className="Username information">
-                    <p>
-                      <span>NOM D'UTILISATEUR</span>
-                      {user.username}
-                    </p>
-                  </div>
-                  <div className="Mail information">
-                    <p>
-                      <span>E-MAIL</span>
-                      {user.mail}
-                    </p>
-                  </div>
-                  <form onSubmit={hSubmit}>
-                    <input type="file" ref={inputRef} />
-                    <button type="submit">Envoyer!</button>
-                  </form>
-                  <p>{msg}</p>
-                </div>
-              ))}
+        <h1>Mon compte</h1>
+        <div className="profilUserInfo">
+          <h2>Vos informations</h2>
+          {informations.map((user) => (
+            <div key={user.id} className="userInfo">
+              <img
+                src={`${import.meta.env.VITE_BACKEND_URL}${user.image}`}
+                alt=""
+              />
+              <div className="firstname information">
+                <h1 style={{ marginBottom: "1rem" }} key={user.id}>
+                  Hello {user.username} <BsFillChatHeartFill color="#db88ba" />
+                </h1>
+                <p>
+                  <span>NOM & PRENOM</span>
+                  {user.lastname} {user.firstname}
+                </p>
+              </div>
+              <div className="Username information">
+                <p>
+                  <span>NOM D'UTILISATEUR</span>
+                  {user.username}
+                </p>
+              </div>
+              <div className="Mail information">
+                <p>
+                  <span>E-MAIL</span>
+                  {user.mail}
+                </p>
+              </div>
+              <div className="Image information">
+                <span>CHANGER D'AVATAR</span>
+                <form onSubmit={hSubmit}>
+                  <input type="file" ref={inputRef} />
+                  <button type="submit">Envoyer!</button>
+                </form>
+              </div>
+              <p>{msg}</p>
             </div>
-          </>
-        )}
+          ))}
+        </div>
 
         {isAdmin === 1 && (
           <div className="profilUserInfo">
             <div>
-              {informations.map((user) => (
-                <h1 style={{ marginBottom: "1rem" }} key={user.id}>
-                  Hello {user.username} <BsFillChatHeartFill color="#db88ba" />
-                </h1>
-              ))}
               <div className="userInfo">
+                <h2>Partie Administrateur</h2>
                 {adminInfo.map((info) => (
                   <div className="firstname information">
                     <Link style={{ color: "#333" }} to={info.route}>
