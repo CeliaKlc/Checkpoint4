@@ -5,21 +5,22 @@ import {
   InputAdornment,
   InputLabel,
 } from "@mui/material";
-import PropTypes from "prop-types";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { useAuth } from "../Context/AuthContext";
 
-export default function AddAdmin({ setIsLogin }) {
+export default function AddAdmin() {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
-  const [isError, setIsError] = useState(false);
+  const [msg, setMsg] = useState(" ");
+  const { token } = useAuth();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -45,6 +46,7 @@ export default function AddAdmin({ setIsLogin }) {
                 method: "post",
                 headers: {
                   "content-type": "application/json",
+                  Authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify({
                   firstname,
@@ -54,13 +56,13 @@ export default function AddAdmin({ setIsLogin }) {
                   email,
                 }),
               }
-            ).then((response) => {
-              if (response.status === 201) {
-                setIsLogin(true);
-              } else {
-                setIsError(true);
-              }
-            });
+            )
+              .then(() => {
+                setMsg("Admin enregistré ! ");
+              })
+              .catch(() => {
+                setMsg("inscription échoué !");
+              });
           }}
         >
           <FormControl
@@ -144,9 +146,7 @@ export default function AddAdmin({ setIsLogin }) {
               }
             />
           </FormControl>
-          {isError && (
-            <p className="error-message">Erreur lors de l'inscription</p>
-          )}
+          <p>{msg}</p>
           <button
             style={{ marginBottom: "2rem" }}
             type="submit"
@@ -160,7 +160,3 @@ export default function AddAdmin({ setIsLogin }) {
     </>
   );
 }
-
-AddAdmin.propTypes = {
-  setIsLogin: PropTypes.func.isRequired,
-};

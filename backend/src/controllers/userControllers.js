@@ -141,15 +141,10 @@ const image = (req, res) => {
 };
 
 const addAdmin = (req, res) => {
-  models.Admin.create({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    username: req.body.username,
-    password: req.body.password,
-    email: req.body.email,
-  })
-    .then(() => {
-      res.sendStatus(204);
+  models.user
+    .insert(req.body)
+    .then(([result]) => {
+      res.location(`/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
