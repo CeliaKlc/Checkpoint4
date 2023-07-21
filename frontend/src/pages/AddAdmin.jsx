@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useAuth } from "../Context/AuthContext";
@@ -20,6 +20,7 @@ export default function AddAdmin() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [msg, setMsg] = useState(" ");
+  const [users, setUsers] = useState([]);
   const { token } = useAuth();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -27,6 +28,22 @@ export default function AddAdmin() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
+  useEffect(() => {
+    fetch(
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => setUsers(data))
+      .catch((error) => {
+        console.error("Error fetching informations data:", error);
+      });
+  }, []);
 
   return (
     <>
@@ -41,7 +58,7 @@ export default function AddAdmin() {
             fetch(
               `${
                 import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-              }/admins`,
+              }/addAdmins`,
               {
                 method: "post",
                 headers: {
@@ -155,6 +172,43 @@ export default function AddAdmin() {
             Inscrire un administrateur
           </button>
         </form>
+
+        <table>
+          <tr>
+            <th>Admin</th>
+          </tr>
+          {users.map((user) => (
+            <tr>
+              <td>{user.username}</td>
+              <td>{user.is_admin}</td>
+              <td>
+                <button
+                  type="button"
+                  onClick={() => {
+                    fetch(
+                      `${
+                        import.meta.env.VITE_BACKEND_URL ??
+                        "http://localhost:5000"
+                      }/admins`,
+                      {
+                        method: "post",
+                        headers: {
+                          Authorization: `Bearer ${token}`,
+                          "content-type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          id: user.id,
+                        }),
+                      }
+                    ).then((response) => response.json());
+                  }}
+                >
+                  Ajouter
+                </button>
+              </td>
+            </tr>
+          ))}
+        </table>
       </section>
       <Footer />
     </>

@@ -140,9 +140,21 @@ const image = (req, res) => {
     });
 };
 
+const addNewAdmin = (req, res) => {
+  models.user
+    .create(req.body)
+    .then(([result]) => {
+      res.location(`/users/${result.insertId}`).sendStatus(201);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const addAdmin = (req, res) => {
   models.user
-    .insert(req.body)
+    .isAdmin(req.body.id)
     .then(([result]) => {
       res.location(`/users/${result.insertId}`).sendStatus(201);
     })
@@ -163,4 +175,5 @@ module.exports = {
   getUserByUsernameWithPasswordAndPassToNext,
   image,
   addAdmin,
+  addNewAdmin,
 };
