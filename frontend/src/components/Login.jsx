@@ -48,7 +48,9 @@ export default function Login() {
           .then((response) => response.json())
           .then((data) => {
             if (data.token !== null) {
+              sessionStorage.setItem("token", data.token);
               setToken(data.token);
+              sessionStorage.setItem("isAdmin", data.admin);
               setIsAdmin(data.admin);
               navigate("/accueil");
             }

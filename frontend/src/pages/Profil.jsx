@@ -12,7 +12,7 @@ export default function Profil() {
   const { isAdmin } = useAuth();
   const [informations, setInformations] = useState([]);
   const { token } = useAuth();
-  const [msg, setMsg] = useState("Aucun upload effectué");
+  const [msg, setMsg] = useState("");
   const inputRef = useRef();
 
   const adminInfo = [
@@ -42,8 +42,8 @@ export default function Profil() {
       });
   };
 
-  const hSubmit = (evt) => {
-    evt.preventDefault();
+  const hSubmit = (event) => {
+    event.preventDefault();
 
     const formData = new FormData();
     formData.append("avatar", inputRef.current.files[0]);
